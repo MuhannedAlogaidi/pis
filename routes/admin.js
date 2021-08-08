@@ -1,9 +1,10 @@
 const express = require('express');
+const path = require('path');
 
 const router = express.Router();
 
 router.get('/add-card',(req,res,next)=>{
-    res.send('<form action="/card" method="POST"><input type="text" name="card-name"><button type="submit">Add Card</button></form>');
+    res.sendFile(path.join(__dirname,'../','views','admin.html'));
 });
 
 module.exports = router;
